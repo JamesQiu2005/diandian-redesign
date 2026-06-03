@@ -67,13 +67,30 @@
     return art;
   }
 
-  function renderFeed(sel, notes, scale) {
+  // 纵向瀑布流：建 N 个列容器，每张卡片放进当前「最短的列」，列自然向下增高
+  // —— 这正是小红书真实的排布方式：纵向滚动，不会横向溢出
+  function renderFeed(sel, notes, cols, scale) {
     const host = q(sel);
     if (!host) return;
-    notes.forEach((n) => host.appendChild(cardEl(n, Math.round((n.h || 400) * scale))));
+    host.innerHTML = '';
+    const columns = [];
+    const heights = [];
+    for (let i = 0; i < cols; i++) {
+      const c = el('div', 'feed-col');
+      host.appendChild(c);
+      columns.push(c);
+      heights.push(0);
+    }
+    notes.forEach((n) => {
+      let min = 0;
+      for (let i = 1; i < cols; i++) if (heights[i] < heights[min]) min = i;
+      const coverH = Math.round((n.h || 400) * scale);
+      columns[min].appendChild(cardEl(n, coverH));
+      heights[min] += coverH + 70; // 估算卡片整体高度，用于均衡分列
+    });
   }
-  renderFeed('[data-feed="browse"]', feedNotes, 0.52);
-  renderFeed('[data-feed="current"]', feedNotes.slice(0, 8), 0.34);
+  renderFeed('[data-feed="browse"]', feedNotes, 4, 0.52); // 主页：每行 4 列
+  renderFeed('[data-feed="current"]', feedNotes.slice(0, 8), 2, 0.34); // 诊断 mock：每行 2 列
 
   /* ---------------------------------------------------------- 搜索历史 */
   const histHost = q('[data-history]');
