@@ -1,0 +1,11 @@
+[project]
+name = "diandian-redesign"
+version = "0.1.0"
+description = "点点 AI · 小红书 PC 端 AI 能力重设计 —— 静态作品集 Demo"
+requires-python = ">=3.10"
+dependencies = []
+
+# 这是一个纯静态站点（HTML/CSS/Vanilla JS），无运行时依赖。
+# 用 UV 起本地预览服务器（不污染全局环境）：
+#   uv run python -m http.server 8000
+# 然后浏览器打开 http://localhost:8000

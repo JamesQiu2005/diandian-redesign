@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# deploy / tooling
+.vercel/
+node_modules/
+
+# python / uv (local preview only)
+__pycache__/
+.venv/

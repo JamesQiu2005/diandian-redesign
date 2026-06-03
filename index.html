@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>点点 AI ≠ 一个 chatbot 频道 · 小红书 PC 端 AI 能力重设计</title>
+  <meta name="description" content="UGC 是主体，AI 是组织者。小红书 PC 端点点 AI 能力重设计 —— 邱瀚泽作品集 Demo。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- 顶部滚动进度 -->
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <!-- 极简顶栏 -->
+  <header class="topbar">
+    <a class="brand" href="#hero"><span class="brand-dot"></span>点点 · 重设计</a>
+    <nav class="topnav">
+      <a href="#diagnosis">诊断</a>
+      <a href="#browse">浏览态</a>
+      <a href="#entries">四入口</a>
+      <a href="#chat">对话流</a>
+      <a href="#flywheel">商业化</a>
+    </nav>
+    <a class="topbar-cta" href="#about">邱瀚泽</a>
+  </header>
+
+  <main>
+    <!-- ============================ 01 HERO ============================ -->
+    <section class="hero" id="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+      </div>
+      <div class="wrap hero-inner">
+        <p class="eyebrow reveal">小红书 PC 端 · 点点 AI 能力重设计</p>
+        <h1 class="hero-title reveal">
+          点点 AI <span class="neq">≠</span><br />一个 chatbot 频道
+        </h1>
+        <p class="hero-claim reveal"><em>UGC 是主体，AI 是组织者。</em></p>
+        <p class="hero-sub reveal">
+          点点不是一个频道，是一种能力。<br />
+          把 AI 融进小红书已有的搜索体验 —— 不让用户切换频道、不逼他们建立新习惯。
+        </p>
+        <div class="hero-meta reveal">
+          <span>作品集 Demo</span><i></i><span>邱瀚泽 · Lab1327 / Dots</span><i></i><span>2026</span>
+        </div>
+        <a class="hero-scroll reveal" href="#diagnosis">向下看现状诊断 <em>↓</em></a>
+      </div>
+    </section>
+
+    <!-- ======================= 02 产品诊断 ======================= -->
+    <section class="section" id="diagnosis">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="sec-num">02</span>
+          <h2 class="sec-title">把 AI 当成一个频道，是第一个错误</h2>
+          <p class="sec-kicker">现状诊断 · 现有点点 PC 端</p>
+        </header>
+
+        <div class="diag-grid">
+          <!-- 现状 mockup：顶部搜索框压制瀑布流 -->
+          <figure class="diag-mock reveal">
+            <div class="mock mock--current">
+              <aside class="x-sidebar x-sidebar--mini">
+                <div class="x-logo">小红书</div>
+                <ul>
+                  <li>首页</li>
+                  <li class="on">点点</li>
+                  <li>RED</li>
+                  <li>直播</li>
+                  <li>发布</li>
+                  <li>消息</li>
+                  <li>我</li>
+                </ul>
+              </aside>
+              <div class="x-main x-main--current">
+                <!-- 顶部：被批判的搜索 + 预设问题 -->
+                <div class="current-top">
+                  <div class="current-search">
+                    <span class="cs-plus">+</span>
+                    <span class="cs-ai">问点点 <i>ai</i></span>
+                    <span class="cs-ph">搜索你感兴趣的内容</span>
+                    <span class="cs-go">🔍</span>
+                  </div>
+                  <div class="current-presets">
+                    <span>怎么有效利用午休时间自我提升</span>
+                    <span>腌肉嫩到出水的技巧</span>
+                    <span>电子书阅读器怎么选</span>
+                  </div>
+                </div>
+                <div class="x-feed x-feed--mini" data-feed="current"></div>
+              </div>
+            </div>
+            <figcaption class="mock-cap">顶部一整块搜索区 + 三条「生活助手」预设问题，把瀑布流挤到下方 —— 想问的人被 feed 分心，想逛的人被搜索框挡路。</figcaption>
+          </figure>
+
+          <!-- 标注式问题列表 -->
+          <ol class="problems">
+            <li class="problem reveal">
+              <span class="p-idx">01</span>
+              <div><h4>搜索框压制瀑布流</h4><p>顶部的大搜索框直接遮挡、干扰内容消费。点点 tab 既不是好用的「问」，也不是顺畅的「逛」。</p></div>
+            </li>
+            <li class="problem reveal">
+              <span class="p-idx">02</span>
+              <div><h4>AI 总结被动弹出，不是对话</h4><p>搜索结果页右侧的「AI 总结」单向输出一段话，用户无法追问、无法展开 —— 它是一个公告，不是一次交流。</p></div>
+            </li>
+            <li class="problem reveal">
+              <span class="p-idx">03</span>
+              <div><h4>参考帖子折叠隐藏 —— 自废 UGC 武功</h4><p>把小红书最强的资产藏进折叠引用，等于把自己降维成「恰好接了小红书数据库的通用 chatbot」。</p></div>
+            </li>
+            <li class="problem reveal">
+              <span class="p-idx">04</span>
+              <div><h4>对话照搬通用 chatbot，无桌面端适配</h4><p>大屏、多窗口、键盘输入这些桌面优势全部浪费，对话界面和手机上一模一样。</p></div>
+            </li>
+            <li class="problem reveal">
+              <span class="p-idx">05</span>
+              <div><h4>预设问题把点点窄化成「生活助手」</h4><p>腌肉、午休自我提升…… 忽视了审美 / 兴趣 / 欲望驱动的高频内容发现 —— 而那恰恰是小红书 UGC 最强的领域。</p></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== 03 浏览态重构：液态玻璃搜索框 ============== -->
+    <section class="section section--showcase" id="browse">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="sec-num">03</span>
+          <h2 class="sec-title">把搜索框，沉到水面之下</h2>
+          <p class="sec-kicker">浏览态重构 · Apple Liquid Glass</p>
+        </header>
+        <p class="lead reveal">
+          搜索框从顶部移到<strong>底部</strong>，以悬浮、半透明的<strong>液态玻璃</strong>形态存在。瀑布流在它下面继续流动、被柔化模糊 ——
+          <em>需要时拉起，不需要时安静待着。</em>
+        </p>
+      </div>
+
+      <div class="showcase-stage reveal">
+        <div class="mock mock--browse">
+          <aside class="x-sidebar">
+            <div class="x-logo">小红书</div>
+            <ul>
+              <li>首页</li>
+              <li class="on">点点</li>
+              <li>RED</li>
+              <li>直播</li>
+              <li>发布</li>
+              <li>消息</li>
+              <li>我</li>
+            </ul>
+            <div class="x-sidebar-foot">关于我们</div>
+          </aside>
+
+          <div class="x-main">
+            <div class="x-tabs">
+              <span class="on">推荐</span><span>穿搭</span><span>美食</span><span>彩妆</span><span>职场</span><span>影视</span><span>旅行</span><span>健身</span><span>游戏</span><span>数码</span>
+            </div>
+
+            <!-- 可滚动瀑布流：内容会从玻璃条下方穿过、被模糊 -->
+            <div class="x-feed" data-feed="browse"></div>
+
+            <!-- 全局变暗层（搜索框展开时） -->
+            <div class="glass-scrim" data-scrim></div>
+
+            <!-- ★ 液态玻璃搜索框 ★ -->
+            <div class="glass-dock" data-dock>
+              <div class="glass-history" data-history-panel>
+                <div class="gh-head">
+                  <span>历史记录</span>
+                  <span class="gh-hint"><i class="dot-ai"></i>绿色 = 可恢复的 AI 对话 session</span>
+                </div>
+                <div class="gh-pills" data-history></div>
+              </div>
+              <div class="glass-bar" id="glassBar" tabindex="0" role="search">
+                <span class="g-plus">+</span>
+                <span class="g-divider"></span>
+                <span class="g-pill">问点点 <i>ai</i></span>
+                <span class="g-input" data-placeholder="搜索，或者直接问点点…"></span>
+                <span class="g-search">🔍</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <p class="mock-cap mock-cap--center reveal">
+          ↑ 点一下底部的搜索框，看它如何浮起、把身后的瀑布流柔化模糊。滚动瀑布流，内容从玻璃下方穿过。
+        </p>
+      </div>
+    </section>
+
+    <!-- ======================= 04 四个入口 ======================= -->
+    <section class="section" id="entries">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="sec-num">04</span>
+          <h2 class="sec-title">四个入口，对应四种用户状态</h2>
+          <p class="sec-kicker">重新设计 · AI 能力的触达点</p>
+        </header>
+
+        <div class="entries-grid">
+          <!-- 入口一 -->
+          <article class="entry reveal">
+            <div class="entry-mock entry-mock--chat">
+              <div class="em-chat-side"><span>新建会话</span><i></i><i></i><i></i></div>
+              <div class="em-chat-main">
+                <div class="em-bubble em-bubble--u">日系男友风穿搭</div>
+                <div class="em-bubble em-bubble--ai">为你找到这些 ↓</div>
+                <div class="em-mini-cards"><span></span><span></span><span></span></div>
+              </div>
+            </div>
+            <div class="entry-body">
+              <span class="entry-tag">入口一</span>
+              <h3>点点 tab · 纯 AI 对话</h3>
+              <p>保留侧边栏 tab，但重定义角色：干净的对话界面，没有瀑布流干扰。涉及找帖子时，笔记卡片<strong>内联</strong>铺在对话流里，而不是折叠引用。</p>
+            </div>
+          </article>
+
+          <!-- 入口二 -->
+          <article class="entry reveal">
+            <div class="entry-mock entry-mock--search">
+              <div class="em-glass">
+                <span class="em-g-pill">问点点 <i>ai</i></span>
+                <span class="em-g-ph">搜索，或者直接问点点…</span>
+                <span>🔍</span>
+              </div>
+              <div class="em-hist">
+                <span class="em-h ai">短发肌肉女穿搭</span>
+                <span class="em-h ai">5天京都行程</span>
+                <span class="em-h">i3长轴版</span>
+                <span class="em-h ai">油皮防晒霜</span>
+                <span class="em-h">ps5 方向盘</span>
+              </div>
+            </div>
+            <div class="entry-body">
+              <span class="entry-tag">入口二</span>
+              <h3>搜索框 · AI 增强搜索</h3>
+              <p>搜索框是 AI 的唯一主入口。触发过对话的历史条目用<strong>绿色 glow</strong> 标记，点回去即可恢复 AI session —— 复用已有的搜索历史，无需另建对话管理系统。</p>
+            </div>
+          </article>
+
+          <!-- 入口三 -->
+          <article class="entry reveal">
+            <div class="entry-mock entry-mock--detail">
+              <div class="em-detail-img">性能车 · 实拍</div>
+              <div class="em-detail-bar">
+                <span class="em-cmt">说点什么…</span>
+                <span class="em-act">♡ 36</span>
+                <span class="em-act">☆ 5</span>
+                <span class="em-act">💬 5</span>
+                <span class="em-ask">问点点</span>
+              </div>
+            </div>
+            <div class="entry-body">
+              <span class="entry-tag">入口三</span>
+              <h3>笔记详情页 · 「问点点」</h3>
+              <p>在详情页底部（与点赞、收藏、评论并列）加一个<strong>问点点</strong>按钮。把当前笔记作为上下文喂给 AI —— 这是用户意图最明确、上下文最丰富的时刻，AI 介入价值最高。</p>
+            </div>
+          </article>
+
+          <!-- 入口四 -->
+          <article class="entry reveal">
+            <div class="entry-mock entry-mock--kill">
+              <div class="em-kill-search">
+                <span class="cs-ai">问点点 <i>ai</i></span>
+                <span class="cs-ph">搜索你感兴趣的内容</span>
+              </div>
+              <div class="em-kill-presets">
+                <span>午休自我提升</span><span>腌肉技巧</span><span>阅读器怎么选</span>
+              </div>
+              <span class="em-kill-stamp">删除</span>
+            </div>
+            <div class="entry-body">
+              <span class="entry-tag">入口四</span>
+              <h3>取消 · 顶部预设问题区</h3>
+              <p>删掉点点 tab 顶部的大搜索框 + 三条预设问题。它既遮挡瀑布流，又把点点窄化成「生活助手」。进入对话的入口已由入口一承载，feed 页面不需要再塞一个。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 05 对话流里的 UGC ==================== -->
+    <section class="section section--chat" id="chat">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="sec-num">05</span>
+          <h2 class="sec-title">UGC 不是附件，是回答的主体</h2>
+          <p class="sec-kicker">核心论证 · 对话流里的笔记卡片</p>
+        </header>
+        <p class="lead reveal">
+          AI 回答精简，笔记卡片直接铺在对话流里 —— 不折叠、不跳转、不是底部一串链接。
+          这是 <strong>Perplexity</strong>（引用塞底部）和 <strong>ChatGPT</strong>（纯文字）都做不到的形态。
+        </p>
+
+        <div class="chat-tabs reveal" data-chat-tabs>
+          <button class="ctab is-active" data-scene="fashion_scene"><b>兴趣驱动</b><small>“我就想看某种东西”</small></button>
+          <button class="ctab" data-scene="product_scene"><b>决策驱动</b><small>“帮我做个判断”</small></button>
+          <button class="ctab" data-scene="travel_scene"><b>规划驱动</b><small>“给我一份能用的计划”</small></button>
+        </div>
+
+        <div class="chat-window reveal" data-chat-window>
+          <div class="chat-bar">
+            <span class="cw-dot"></span><span class="cw-dot"></span><span class="cw-dot"></span>
+            <span class="cw-title" data-chat-title>点点 · AI 对话</span>
+            <span class="cw-replay" data-chat-replay>↺ 重播</span>
+          </div>
+          <div class="chat-thread" data-chat-thread></div>
+          <div class="chat-input">
+            <span class="ci-plus">+</span>
+            <span class="ci-ph">继续追问…</span>
+            <span class="ci-send">↑</span>
+          </div>
+        </div>
+
+        <p class="chat-foot reveal">每张卡片都能一键跳回完整笔记，右侧保留对话窗 —— 在「读」与「问」之间自由切换。</p>
+      </div>
+    </section>
+
+    <!-- ===================== 06 商业化飞轮 ===================== -->
+    <section class="section section--fly" id="flywheel">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="sec-num">06</span>
+          <h2 class="sec-title">四层飞轮，咬合在 UGC 数据上</h2>
+          <p class="sec-kicker">商业化路径</p>
+        </header>
+
+        <div class="fly-grid">
+          <div class="fly-stage reveal">
+            <div class="fly-ring"></div>
+            <div class="fly-core"><b>UGC</b><span>数据飞轮</span></div>
+            <div class="fly-layer fly-layer--1"><b>免费层</b><span>文本搜索</span><i>增长飞轮</i></div>
+            <div class="fly-layer fly-layer--2"><b>付费层</b><span>多模态订阅</span><i>产品飞轮</i></div>
+            <div class="fly-layer fly-layer--3"><b>电商闭环</b><span>AI 推荐 → 站内成交</span><i>电商飞轮</i></div>
+            <div class="fly-layer fly-layer--4"><b>广告层</b><span>原生推荐</span><i>商业飞轮</i></div>
+          </div>
+
+          <ul class="fly-list">
+            <li class="reveal"><b>免费层 · 文本搜索</b><p>所有用户免费用，贡献搜索意图数据，训练更准的内容匹配模型。<span class="fly-tag">增长飞轮</span></p></li>
+            <li class="reveal"><b>付费层 · 多模态订阅</b><p>拍照搜、视频理解、语音交互、深度攻略 —— 用户为 AI 付费的心智已被 ChatGPT Plus / Perplexity Pro 养好。<span class="fly-tag">产品飞轮</span></p></li>
+            <li class="reveal"><b>电商闭环 · 站内成交</b><p>把「看笔记→记品牌→跳第三方下单」缩短为「问点点→看推荐→站内下单」，赚电商佣金。<span class="fly-tag">电商飞轮</span></p></li>
+            <li class="reveal"><b>广告层 · 原生推荐</b><p>意图明确、上下文匹配、转化路径短，广告形态与 UGC 卡片一致，不破坏体验。<span class="fly-tag">商业飞轮</span></p></li>
+          </ul>
+        </div>
+
+        <div class="fly-loop reveal">
+          <span class="loop-old">看笔记 → 记住品牌 → 跳第三方下单 <em>流失严重</em></span>
+          <span class="loop-arrow">变成</span>
+          <span class="loop-new">问点点 → 看推荐 → 站内下单 <em>转化大幅提升</em></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= 07 关于 ======================= -->
+    <section class="section section--about" id="about">
+      <div class="wrap about-inner">
+        <header class="sec-head reveal">
+          <span class="sec-num">07</span>
+          <h2 class="sec-title">关于</h2>
+        </header>
+        <p class="about-claim reveal">点点不应该试图成为又一个通用 AI 助手 —— 那条路上小红书对阿里、腾讯、字节没有任何优势。<br />它应该成为<strong>更好地服务小红书内容消费的 AI 能力层</strong>。这是小红书独有的壁垒。</p>
+        <div class="about-card reveal">
+          <div class="about-id">
+            <h3>邱瀚泽</h3>
+            <p>投递 · 小红书 Lab1327 / Dots AI Native 产品岗实习</p>
+          </div>
+          <ul class="about-links">
+            <li><span>邮箱</span><a href="mailto:hq2144@nyu.edu">hq2144@nyu.edu</a></li>
+            <li><span>GitHub</span><a href="#" data-replace>github.com/你的用户名</a></li>
+            <li><span>Reggia</span><a href="#" data-replace>你的作品链接</a></li>
+            <li><span>配套</span><a href="#" data-replace>点点桌面端 PRD</a></li>
+          </ul>
+        </div>
+      </div>
+      <footer class="site-foot">
+        <span>UGC 是主体，AI 是组织者。</span>
+        <span class="foot-mini">静态 Demo · 数据均为虚构 · HTML / CSS / Vanilla JS</span>
+      </footer>
+    </section>
+  </main>
+
+  <script src="mock_data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
