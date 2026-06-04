@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>点点 AI ≠ 一个 chatbot 频道 · 小红书 PC 端 AI 能力重设计</title>
-  <meta name="description" content="UGC 是主体，AI 是组织者。小红书 PC 端点点 AI 能力重设计 —— 邱瀚泽作品集 Demo。" />
+  <title>点点 AI ≠ 一个 chatbot 频道 · 小红书 PC 端 AI 搜索体验探索</title>
+  <meta name="description" content="UGC 是主体，AI 是组织者。小红书 PC 端点点 AI 搜索体验的产品方向探索 —— 邱瀚泽 Product Vision Memo。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet" />
@@ -16,52 +16,139 @@
 
   <!-- 极简顶栏 -->
   <header class="topbar">
-    <a class="brand" href="#hero"><span class="brand-dot"></span>点点 · 重设计</a>
+    <a class="brand" href="#hero"><span class="brand-dot"></span>点点 · 方向探索</a>
     <nav class="topnav">
-      <a href="#diagnosis">诊断</a>
+      <a href="#trend">趋势</a>
+      <a href="#diagnosis">观察</a>
       <a href="#browse">浏览态</a>
       <a href="#entries">四入口</a>
       <a href="#chat">对话流</a>
       <a href="#flywheel">商业化</a>
+      <a href="#validate">验证</a>
     </nav>
     <a class="topbar-cta" href="#about">邱瀚泽</a>
   </header>
 
   <main>
-    <!-- ============================ 01 HERO ============================ -->
+    <!-- ============================ 封面 HERO ============================ -->
     <section class="hero" id="hero">
       <div class="hero-bg" aria-hidden="true">
         <span class="orb orb-1"></span>
         <span class="orb orb-2"></span>
       </div>
       <div class="wrap hero-inner">
-        <p class="eyebrow reveal">小红书 PC 端 · 点点 AI 能力重设计</p>
+        <p class="eyebrow reveal">小红书 PC 端 · 点点 AI 搜索体验探索</p>
         <h1 class="hero-title reveal">
           点点 AI <span class="neq">≠</span><br />一个 chatbot 频道
         </h1>
         <p class="hero-claim reveal"><em>UGC 是主体，AI 是组织者。</em></p>
         <p class="hero-sub reveal">
-          点点不是一个频道，是一种能力。<br />
-          把 AI 融进小红书已有的搜索体验 —— 不让用户切换频道、不逼他们建立新习惯。
+          点点更像一种能力，而不是一个频道。<br />
+          把 AI 融进小红书已有的搜索体验 —— 不必让用户切换频道，也不必逼他们建立新习惯。
         </p>
         <div class="hero-meta reveal">
-          <span>作品集 Demo</span><i></i><span>邱瀚泽 · Lab1327 / Dots</span><i></i><span>2026</span>
+          <span>Product Vision Memo</span><i></i><span>邱瀚泽 · Lab1327 / Dots</span><i></i><span>2026</span>
         </div>
-        <a class="hero-scroll reveal" href="#diagnosis">向下看现状诊断 <em>↓</em></a>
+        <a class="hero-scroll reveal" href="#trend">先看正在发生的趋势 <em>↓</em></a>
       </div>
     </section>
 
-    <!-- ======================= 02 产品诊断 ======================= -->
+    <!-- ===================== 01 AI 搜索大背景 ===================== -->
+    <section class="section section--trend" id="trend">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="sec-num">01</span>
+          <h2 class="sec-title">用户正在从搜索框，迁移到对话框</h2>
+          <p class="sec-kicker">大背景 · AI 搜索趋势已经确立</p>
+        </header>
+        <p class="lead reveal">
+          在讨论点点具体怎么做之前，先看正在发生的三件事 ——
+          它们各自独立，却共同指向同一个机会。
+        </p>
+
+        <!-- 趋势一 -->
+        <div class="trend-move reveal">
+          <span class="move-tag">趋势一</span>
+          <h3 class="move-h">用户的信息获取行为，已经在迁移</h3>
+          <div class="trend-stats">
+            <div class="stat">
+              <div class="stat-num">86<em>%</em></div>
+              <p class="stat-desc">中国消费者每周至少使用一次 AI 工具</p>
+              <p class="stat-src">埃森哲《中国消费者洞察》· 2026.05</p>
+            </div>
+            <div class="stat">
+              <div class="stat-num">−18.8<em>%</em></div>
+              <p class="stat-desc">2026 年 4 月，搜索引擎类 App 月人均使用次数同比下降</p>
+              <p class="stat-src">第三方数据监测 · 2026.04</p>
+            </div>
+          </div>
+          <p class="trend-note">同期，超过半数用户表示 AI 已经替代了他们使用搜索引擎的时间和频次（明略科技 &amp; 秒针营销科学院，2026.02）。</p>
+          <p class="trend-take">消费者获取信息的入口，正在从搜索框迁移到对话框。</p>
+        </div>
+
+        <!-- 趋势二 -->
+        <div class="trend-move reveal">
+          <span class="move-tag">趋势二</span>
+          <h3 class="move-h">渗透最快的品类，正好是小红书的强项</h3>
+          <div class="cat-bars">
+            <div class="cat-row is-core">
+              <span class="cat-name">旅游出行</span>
+              <span class="cat-track"><i class="cat-fill" style="width:50%"></i></span>
+              <span class="cat-pct">50%</span>
+            </div>
+            <div class="cat-row">
+              <span class="cat-name">医疗健康</span>
+              <span class="cat-track"><i class="cat-fill" style="width:47%"></i></span>
+              <span class="cat-pct">47%</span>
+            </div>
+            <div class="cat-row is-core">
+              <span class="cat-name">3C 数码</span>
+              <span class="cat-track"><i class="cat-fill" style="width:41%"></i></span>
+              <span class="cat-pct">41%</span>
+            </div>
+            <div class="cat-row is-core">
+              <span class="cat-name">美妆护肤</span>
+              <span class="cat-track"><i class="cat-fill" style="width:31%"></i></span>
+              <span class="cat-pct">31%</span>
+            </div>
+          </div>
+          <p class="cat-legend"><i class="dot-core"></i>标红的旅游、3C、美妆，正是小红书 UGC 内容最密集的品类</p>
+          <p class="stat-src">AI 在消费决策中的渗透率 · 明略科技 &amp; 秒针，覆盖 12 个消费行业 · 2026.02</p>
+          <p class="trend-take">AI 搜索渗透最快的品类，与小红书的内容优势高度重合。</p>
+        </div>
+
+        <!-- 趋势三 -->
+        <div class="trend-move reveal">
+          <span class="move-tag">趋势三</span>
+          <h3 class="move-h">用户会去追溯 AI 回答的原始来源</h3>
+          <div class="trend-stats">
+            <div class="stat">
+              <div class="stat-num">42<em>%</em></div>
+              <p class="stat-desc">用户经常或总是点击 AI 回答里的引用链接</p>
+              <p class="stat-src">明略科技 &amp; 秒针 · 2026.02</p>
+            </div>
+            <div class="stat">
+              <div class="stat-num stat-num--text">高于<br /><em>搜索引擎 &amp; 社交媒体</em></div>
+              <p class="stat-desc">AI 对话工具的用户信任指数</p>
+              <p class="stat-src">明略科技 &amp; 秒针 · 2026.02</p>
+            </div>
+          </div>
+          <p class="trend-take">用户不只看 AI 的总结，还会点开原文 —— 所以 AI 回答里 UGC 的呈现方式，几乎决定成败。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= 02 现状观察 ======================= -->
     <section class="section" id="diagnosis">
       <div class="wrap">
         <header class="sec-head reveal">
           <span class="sec-num">02</span>
-          <h2 class="sec-title">把 AI 当成一个频道，是第一个错误</h2>
-          <p class="sec-kicker">现状诊断 · 现有点点 PC 端</p>
+          <h2 class="sec-title">把 AI 当成一个独立频道，值得重新想一想</h2>
+          <p class="sec-kicker">现状观察 · 现有点点 PC 端</p>
         </header>
 
         <div class="diag-grid">
-          <!-- 现状 mockup：顶部搜索框压制瀑布流 -->
+          <!-- 现状 mockup：顶部搜索框占据首屏 -->
           <figure class="diag-mock reveal">
             <div class="mock mock--current">
               <aside class="x-sidebar x-sidebar--mini">
@@ -77,7 +164,7 @@
                 </ul>
               </aside>
               <div class="x-main x-main--current">
-                <!-- 顶部：被批判的搜索 + 预设问题 -->
+                <!-- 顶部：被观察的搜索 + 预设问题 -->
                 <div class="current-top">
                   <div class="current-search">
                     <span class="cs-plus">+</span>
@@ -94,30 +181,26 @@
                 <div class="x-feed x-feed--mini" data-feed="current"></div>
               </div>
             </div>
-            <figcaption class="mock-cap">顶部一整块搜索区 + 三条「生活助手」预设问题，把瀑布流挤到下方 —— 想问的人被 feed 分心，想逛的人被搜索框挡路。</figcaption>
+            <figcaption class="mock-cap">顶部一整块搜索区 + 三条「生活助手」预设问题，占据了首屏的主要空间 —— 想问的人容易被 feed 分散注意，想逛的人要先越过搜索区。</figcaption>
           </figure>
 
-          <!-- 标注式问题列表 -->
+          <!-- 标注式观察列表 -->
           <ol class="problems">
             <li class="problem reveal">
               <span class="p-idx">01</span>
-              <div><h4>搜索框压制瀑布流</h4><p>顶部的大搜索框直接遮挡、干扰内容消费。点点 tab 既不是好用的「问」，也不是顺畅的「逛」。</p></div>
+              <div><h4>AI 的入口散落在好几处，彼此并不连贯</h4><p>现在想用 AI，至少有三条并行的路：点点 tab、搜索框里的「问点点」、结果页的「AI 总结」。它们各做各的，用户很难形成一个稳定的「该去哪儿问」的心智。</p></div>
             </li>
             <li class="problem reveal">
               <span class="p-idx">02</span>
-              <div><h4>AI 总结被动弹出，不是对话</h4><p>搜索结果页右侧的「AI 总结」单向输出一段话，用户无法追问、无法展开 —— 它是一个公告，不是一次交流。</p></div>
+              <div><h4>想继续追问，入口却被放在 AI 总结的最底部</h4><p>搜索结果里的「AI 总结」给完一段话后，真正能和 AI 接着聊下去的入口，被压在整段总结的最下面 —— 很多人还没滚到那儿，就已经离开了。</p></div>
             </li>
             <li class="problem reveal">
               <span class="p-idx">03</span>
-              <div><h4>参考帖子折叠隐藏 —— 自废 UGC 武功</h4><p>把小红书最强的资产藏进折叠引用，等于把自己降维成「恰好接了小红书数据库的通用 chatbot」。</p></div>
+              <div><h4>参考帖子被折叠隐藏 —— 等于主动放弃了 UGC 优势</h4><p>把小红书最强的资产收进折叠引用，结果会更接近「一个恰好接了小红书数据库的通用 chatbot」。</p></div>
             </li>
             <li class="problem reveal">
               <span class="p-idx">04</span>
-              <div><h4>对话照搬通用 chatbot，无桌面端适配</h4><p>大屏、多窗口、键盘输入这些桌面优势全部浪费，对话界面和手机上一模一样。</p></div>
-            </li>
-            <li class="problem reveal">
-              <span class="p-idx">05</span>
-              <div><h4>预设问题把点点窄化成「生活助手」</h4><p>腌肉、午休自我提升…… 忽视了审美 / 兴趣 / 欲望驱动的高频内容发现 —— 而那恰恰是小红书 UGC 最强的领域。</p></div>
+              <div><h4>预设问题把点点收窄成「生活助手」</h4><p>腌肉、午休自我提升…… 容易让人忽略审美 / 兴趣 / 欲望驱动的高频内容发现 —— 而那恰恰是小红书 UGC 最强的领域。</p></div>
             </li>
           </ol>
         </div>
@@ -129,11 +212,11 @@
       <div class="wrap">
         <header class="sec-head reveal">
           <span class="sec-num">03</span>
-          <h2 class="sec-title">把搜索框，沉到水面之下</h2>
+          <h2 class="sec-title">一个可以探索的方向：把搜索框沉到水面之下</h2>
           <p class="sec-kicker">浏览态重构 · Apple Liquid Glass</p>
         </header>
         <p class="lead reveal">
-          搜索框从顶部移到<strong>底部</strong>，以悬浮、半透明的<strong>液态玻璃</strong>形态存在。瀑布流在它下面继续流动、被柔化模糊 ——
+          一个可能的方向是：把搜索框从顶部移到<strong>底部</strong>，以悬浮、半透明的<strong>液态玻璃</strong>形态存在。瀑布流在它下面继续流动、被柔化模糊 ——
           <em>需要时拉起，不需要时安静待着。</em>
         </p>
       </div>
@@ -173,11 +256,18 @@
                   <span class="gh-hint"><i class="dot-ai"></i>绿色 = 可恢复的 AI 对话 session</span>
                 </div>
                 <div class="gh-pills" data-history></div>
+                <div class="gh-guess">
+                  <div class="gg-head">
+                    <span class="gg-title" data-guess-title>猜你想搜</span>
+                    <span class="gg-badge" data-guess-badge hidden>点点 <i>ai</i> 增强</span>
+                  </div>
+                  <ul class="gg-list" data-guess-list></ul>
+                </div>
               </div>
               <div class="glass-bar" id="glassBar" tabindex="0" role="search">
                 <span class="g-plus">+</span>
                 <span class="g-divider"></span>
-                <span class="g-pill">问点点 <i>ai</i></span>
+                <button class="g-pill" id="askPill" type="button" aria-pressed="false" title="切到「问点点」AI 模式">问点点 <i>ai</i></button>
                 <span class="g-input" data-placeholder="搜索，或者直接问点点…"></span>
                 <span class="g-search">🔍</span>
               </div>
@@ -190,6 +280,27 @@
         <p class="mock-cap mock-cap--center reveal">
           ↑ 点一下底部的搜索框，看它如何浮起、把身后的瀑布流柔化模糊。滚动瀑布流，内容从玻璃下方穿过。
         </p>
+
+        <p class="rationale-intro reveal">两个关键决定，背后的依据 ——</p>
+        <div class="rationale">
+          <div class="rcard reveal">
+            <span class="rcard-q">为什么把输入框放到底部</span>
+            <ul>
+              <li>这不是移动端的拇指可达性逻辑 —— 这里是 PC 端。</li>
+              <li>而是对话式 AI 已经养成的用户心智：ChatGPT、Claude、DeepSeek、Perplexity 的输入框都在底部。</li>
+              <li>输入框的位置本身在传递信息 —— <strong>底部 = 对话入口，顶部 = 传统搜索</strong>。</li>
+            </ul>
+          </div>
+          <div class="rcard reveal">
+            <span class="rcard-q">为什么是半透明浮动，而不是完全隐藏或完全固定</span>
+            <ul>
+              <li>一条自我约束：<strong>创新发生在视觉层，而不是行为层</strong>。</li>
+              <li><b>32.47%</b> 的用户期待界面"更流畅稳定"（上海消保委，3200 人样本）。</li>
+              <li>超 <b>90%</b> 的人感知到推荐存在偏差或算法诱导，形成"一边依赖、一边不信"的矛盾（同期调研）。</li>
+              <li>用户抵制的不是现代设计语言，而是不可预测的行为 —— 滑动隐藏比位置飘忽更被接受，因为规则可预测、位置一致、控制权在用户手里。</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -318,6 +429,15 @@
         </div>
 
         <p class="chat-foot reveal">每张卡片都能一键跳回完整笔记，右侧保留对话窗 —— 在「读」与「问」之间自由切换。</p>
+
+        <div class="chat-why reveal">
+          <span class="rcard-q">为什么内联展示，而不是折叠引用</span>
+          <ul>
+            <li><b>42%</b> 的用户会点开 AI 回答里的引用链接 —— 折叠，等于给近一半有溯源习惯的人多加一次点击。</li>
+            <li>小红书的 UGC 是视觉化、人格化的内容（图 / 视频 / 人设），不是 Perplexity 式的文字链接。</li>
+            <li>把它折叠隐藏，恰好抹掉了这个最该被放大的差异化优势。</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -356,24 +476,50 @@
       </div>
     </section>
 
-    <!-- ======================= 07 关于 ======================= -->
+    <!-- ===================== 07 如何验证 ===================== -->
+    <section class="section section--verify" id="validate">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <span class="sec-num">07</span>
+          <h2 class="sec-title">如果要验证这个方向，我会怎么做</h2>
+          <p class="sec-kicker">验证框架 · 假设与实验</p>
+        </header>
+
+        <div class="verify-grid">
+          <div class="vcard reveal">
+            <span class="v-tag">核心假设</span>
+            <p>把搜索框下移、把 AI 融进搜索，<strong>不会降低 AI 功能的使用率</strong>，同时能<strong>提升内容消费时长</strong>。</p>
+          </div>
+          <div class="vcard reveal">
+            <span class="v-tag">A / B 实验方向</span>
+            <p>对照组 = 现有点点 tab 布局；实验组 = AI 融入搜索框方案。核心指标：AI 搜索使用率、内容消费时长、笔记点击率。</p>
+          </div>
+          <div class="vcard reveal">
+            <span class="v-tag">用户调研方向</span>
+            <p>5–8 人小规模可用性测试。任务一："用 AI 搜索找一支适合油皮的防晒霜"；任务二："在瀑布流里找到感兴趣的内容"。观察任务完成路径与主观满意度。</p>
+          </div>
+        </div>
+        <p class="verify-note reveal">* 以上是验证方向，而非已经完成的研究 —— 这是一份产品方向探索（Product Vision Memo），不是结论。</p>
+      </div>
+    </section>
+
+    <!-- ======================= 08 关于 ======================= -->
     <section class="section section--about" id="about">
       <div class="wrap about-inner">
         <header class="sec-head reveal">
-          <span class="sec-num">07</span>
+          <span class="sec-num">08</span>
           <h2 class="sec-title">关于</h2>
         </header>
-        <p class="about-claim reveal">点点不应该试图成为又一个通用 AI 助手 —— 那条路上小红书对阿里、腾讯、字节没有任何优势。<br />它应该成为<strong>更好地服务小红书内容消费的 AI 能力层</strong>。这是小红书独有的壁垒。</p>
+        <p class="about-claim reveal">点点不一定要去做又一个通用 AI 助手 —— 那条路上，小红书对阿里、腾讯、字节并没有优势。<br />一个更顺势的方向，是让它成为<strong>更好地服务小红书内容消费的 AI 能力层</strong> —— 这正是小红书独有的壁垒。</p>
         <div class="about-card reveal">
           <div class="about-id">
             <h3>邱瀚泽</h3>
-            <p>投递 · 小红书 Lab1327 / Dots AI Native 产品岗实习</p>
+            <p>Product Vision Memo · 投递小红书 Lab1327 / Dots AI Native 产品岗实习</p>
           </div>
           <ul class="about-links">
             <li><span>邮箱</span><a href="mailto:hq2144@nyu.edu">hq2144@nyu.edu</a></li>
-            <li><span>GitHub</span><a href="#" data-replace>github.com/你的用户名</a></li>
-            <li><span>Reggia</span><a href="#" data-replace>你的作品链接</a></li>
-            <li><span>配套</span><a href="#" data-replace>点点桌面端 PRD</a></li>
+            <li><span>GitHub</span><a href="https://github.com/JamesQiu2005" target="_blank" rel="noopener">github.com/JamesQiu2005</a></li>
+            <li><span>Reggia</span><a href="https://github.com/JamesQiu2005/reggia" target="_blank" rel="noopener">github.com/JamesQiu2005/reggia</a></li>
           </ul>
         </div>
       </div>

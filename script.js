@@ -119,11 +119,49 @@
   function closeGlass() { if (xMain) xMain.classList.remove('search-open'); }
   if (glassBar && xMain) {
     glassBar.addEventListener('click', (e) => { e.stopPropagation(); xMain.classList.toggle('search-open'); });
-    glassBar.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); xMain.classList.toggle('search-open'); } });
+    glassBar.addEventListener('keydown', (e) => { if (e.target === glassBar && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); xMain.classList.toggle('search-open'); } });
     const scrim = q('[data-scrim]');
     if (scrim) scrim.addEventListener('click', closeGlass);
     document.addEventListener('click', (e) => { if (dock && !dock.contains(e.target)) closeGlass(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeGlass(); });
+  }
+
+  /* -------------------------------- 猜你想搜 / 猜你想问（问点点 AI 切换）*/
+  const askPill = q('#askPill');
+  const guessList = q('[data-guess-list]');
+  const guessTitle = q('[data-guess-title]');
+  const guessBadge = q('[data-guess-badge]');
+  const gInput = q('.g-input');
+
+  function renderGuess(aiMode) {
+    if (!guessList) return;
+    const items = aiMode ? guessAsk : guessSearch;
+    guessList.innerHTML = '';
+    guessList.classList.toggle('is-ai', !!aiMode);
+    items.forEach((t) => {
+      const li = el('li', 'gg-item');
+      li.appendChild(el('span', null, t));
+      li.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (gInput) gInput.dataset.placeholder = t;
+      });
+      guessList.appendChild(li);
+    });
+    if (guessTitle) guessTitle.textContent = aiMode ? '猜你想问' : '猜你想搜';
+    if (guessBadge) guessBadge.hidden = !aiMode;
+  }
+  renderGuess(false);
+
+  if (askPill && xMain) {
+    askPill.addEventListener('click', (e) => {
+      e.stopPropagation();
+      xMain.classList.add('search-open'); // 点 pill 时确保面板展开
+      const on = xMain.classList.toggle('ai-mode');
+      askPill.classList.toggle('is-on', on);
+      askPill.setAttribute('aria-pressed', on ? 'true' : 'false');
+      if (gInput) gInput.dataset.placeholder = on ? '直接问点点，描述你想要的…' : '搜索，或者直接问点点…';
+      renderGuess(on);
+    });
   }
 
   /* ---------------------------------------------------------- 对话流演示 */
